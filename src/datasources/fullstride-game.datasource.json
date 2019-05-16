@@ -1,0 +1,11 @@
+{
+  "name": "FullstrideGame",
+  "connector": "mongodb",
+  "url": "mongodb+srv://example-cluster-rw:MOPkQ5T4i4JCxcSL@gjv-dev-example-cluster-waqu1.azure.mongodb.net/test?retryWrites=true",
+  "host": "gjv-dev-example-cluster-waqu1.azure.mongodb.net",
+  "port": 27017,
+  "user": "example-cluster-rw",
+  "password": "MOPkQ5T4i4JCxcSLMOPkQ5T4i4JCxcSL",
+  "database": "fullstride-game-db",
+  "useNewUrlParser": true
+}
