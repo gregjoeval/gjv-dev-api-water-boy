@@ -30,7 +30,7 @@
     "docker:run": "docker run -p 3000:3000 -d gjv-dev-example",
     "migrate": "node ./dist/migrate",
     "prestart": "npm run build",
-    "start": "node .",
+    "start": "node -r dotenv/config .",
     "prepublishOnly": "npm run test"
   },
   "repository": {
@@ -48,6 +48,7 @@
   ],
   "dependencies": {
     "@loopback/boot": "^1.2.7",
+    "@loopback/build": "^1.5.4",
     "@loopback/context": "^1.15.0",
     "@loopback/core": "^1.7.0",
     "@loopback/openapi-v3": "^1.3.11",
@@ -55,10 +56,10 @@
     "@loopback/rest": "^1.11.2",
     "@loopback/rest-explorer": "^1.1.22",
     "@loopback/service-proxy": "^1.1.10",
-    "loopback-connector-mongodb": "^4.2.0",
-    "@loopback/build": "^1.5.4",
     "@loopback/testlab": "^1.2.9",
-    "@loopback/tslint-config": "^2.0.4"
+    "@loopback/tslint-config": "^2.0.4",
+    "dotenv": "^8.0.0",
+    "loopback-connector-mongodb": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^10.11.2",
