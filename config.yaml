@@ -1,0 +1,260 @@
+# Generated from /openapi.json provided by this project and https://www.json2yaml.com/
+---
+openapi: 3.0.0
+info:
+  title: LoopBack Application
+  version: 1.0.0
+paths:
+  "/fullstride-games/count":
+    get:
+      x-controller-name: FullstrideGameController
+      x-operation-name: count
+      tags:
+        - FullstrideGameController
+      responses:
+        '200':
+          description: FullstrideGame model count
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: number
+      parameters:
+        - name: where
+          in: query
+          style: deepObject
+          explode: true
+          schema:
+            type: object
+      operationId: FullstrideGameController.count
+  "/fullstride-games/{id}":
+    put:
+      x-controller-name: FullstrideGameController
+      x-operation-name: replaceById
+      tags:
+        - FullstrideGameController
+      responses:
+        '204':
+          description: FullstrideGame PUT success
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/FullstrideGame"
+        x-parameter-index: 1
+      operationId: FullstrideGameController.replaceById
+    patch:
+      x-controller-name: FullstrideGameController
+      x-operation-name: updateById
+      tags:
+        - FullstrideGameController
+      responses:
+        '204':
+          description: FullstrideGame PATCH success
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/FullstrideGame"
+        x-parameter-index: 1
+      operationId: FullstrideGameController.updateById
+    get:
+      x-controller-name: FullstrideGameController
+      x-operation-name: findById
+      tags:
+        - FullstrideGameController
+      responses:
+        '200':
+          description: FullstrideGame model instance
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FullstrideGame"
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      operationId: FullstrideGameController.findById
+    delete:
+      x-controller-name: FullstrideGameController
+      x-operation-name: deleteById
+      tags:
+        - FullstrideGameController
+      responses:
+        '204':
+          description: FullstrideGame DELETE success
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      operationId: FullstrideGameController.deleteById
+  "/fullstride-games":
+    post:
+      x-controller-name: FullstrideGameController
+      x-operation-name: create
+      tags:
+        - FullstrideGameController
+      responses:
+        '200':
+          description: FullstrideGame model instance
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FullstrideGame"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/FullstrideGame"
+      operationId: FullstrideGameController.create
+    patch:
+      x-controller-name: FullstrideGameController
+      x-operation-name: updateAll
+      tags:
+        - FullstrideGameController
+      responses:
+        '200':
+          description: FullstrideGame PATCH success count
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: number
+      parameters:
+        - name: where
+          in: query
+          style: deepObject
+          explode: true
+          schema:
+            type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/FullstrideGame"
+      operationId: FullstrideGameController.updateAll
+    get:
+      x-controller-name: FullstrideGameController
+      x-operation-name: find
+      tags:
+        - FullstrideGameController
+      responses:
+        '200':
+          description: Array of FullstrideGame model instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/FullstrideGame"
+      parameters:
+        - name: filter
+          in: query
+          style: deepObject
+          explode: true
+          schema:
+            properties:
+              where:
+                type: object
+              fields:
+                type: object
+                properties:
+                  id:
+                    type: boolean
+                  lastUpdated:
+                    type: boolean
+                  dateTime:
+                    type: boolean
+                  rink:
+                    type: boolean
+                  teams:
+                    type: boolean
+                  notes:
+                    type: boolean
+              offset:
+                type: integer
+                minimum: 0
+              limit:
+                type: integer
+                minimum: 0
+              skip:
+                type: integer
+                minimum: 0
+              order:
+                type: array
+                items:
+                  type: string
+            type: object
+      operationId: FullstrideGameController.find
+  "/ping":
+    get:
+      x-controller-name: PingController
+      x-operation-name: ping
+      tags:
+        - PingController
+      responses:
+        '200':
+          description: Ping Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  greeting:
+                    type: string
+                  date:
+                    type: string
+                  url:
+                    type: string
+                  headers:
+                    type: object
+                    properties:
+                      Content-Type:
+                        type: string
+                    additionalProperties: true
+      operationId: PingController.ping
+servers:
+  - url: https://gjv-dev-fullstride-api.herokuapp.com
+components:
+  schemas:
+    FullstrideGame:
+      title: FullstrideGame
+      properties:
+        id:
+          type: string
+        lastUpdated:
+          type: string
+          format: date-time
+        dateTime:
+          type: string
+        rink:
+          type: string
+        teams:
+          type: string
+        notes:
+          type: string
+      required:
+        - id
+        - dateTime
+        - rink
+        - teams
