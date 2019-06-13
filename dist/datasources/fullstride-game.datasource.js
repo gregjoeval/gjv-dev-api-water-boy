@@ -14,18 +14,9 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@loopback/core");
 const repository_1 = require("@loopback/repository");
+const config = require("./fullstride-game.datasource.json");
 let FullstrideGameDataSource = class FullstrideGameDataSource extends repository_1.juggler.DataSource {
-    constructor(dsConfig = {
-        name: process.env.MONGODB__FULLSTRIDE_GAME__NAME,
-        connector: 'mongodb',
-        database: process.env.MONGODB__FULLSTRIDE_GAME__DATABASE,
-        useNewUrlParser: true,
-        url: process.env.MONGODB__FULLSTRIDE_GAME__URL,
-        host: process.env.MONGODB__FULLSTRIDE_GAME__HOST,
-        port: process.env.MONGODB__FULLSTRIDE_GAME__PORT,
-        user: process.env.MONGODB__FULLSTRIDE_GAME__USER,
-        password: process.env.MONGODB__FULLSTRIDE_GAME__PASSWORD,
-    }) {
+    constructor(dsConfig = Object.assign({}, config, { url: `mongodb+srv://${process.env.MONGODB__USER}:${process.env.MONGODB__PASSWORD}@${process.env.MONGODB__HOST}/${config.database}?retryWrites=true&w=majority` })) {
         super(dsConfig);
     }
 };

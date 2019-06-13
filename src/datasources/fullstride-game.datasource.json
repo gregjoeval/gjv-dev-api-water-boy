@@ -1,0 +1,7 @@
+{
+  "name": "fullstride-game",
+  "connector": "mongodb",
+  "port": 27017,
+  "database": "fullstride-game-db",
+  "useNewUrlParser": true
+}

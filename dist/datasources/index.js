@@ -4,4 +4,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./fullstride-game.datasource"));
+__export(require("./sporting-event.datasource"));
+__export(require("./team.datasource"));
+__export(require("./person.datasource"));
 //# sourceMappingURL=index.js.map

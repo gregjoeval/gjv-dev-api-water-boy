@@ -5,4 +5,7 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./ping.controller"));
 __export(require("./fullstride-game.controller"));
+__export(require("./person.controller"));
+__export(require("./team.controller"));
+__export(require("./sporting-event.controller"));
 //# sourceMappingURL=index.js.map
