@@ -8,22 +8,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = require("@loopback/core");
 const repository_1 = require("@loopback/repository");
-const config = require("./sporting-event.datasource.json");
-let SportingEventDataSource = class SportingEventDataSource extends repository_1.juggler.DataSource {
-    constructor(dsConfig = Object.assign({}, config, { url: `mongodb+srv://${process.env.MONGODB__USER}:${process.env.MONGODB__PASSWORD}@${process.env.MONGODB__HOST}/${config.database}?retryWrites=true&w=majority` })) {
-        super(dsConfig);
+const uuid_1 = require("uuid");
+let UserGroup = class UserGroup extends repository_1.Entity {
+    constructor(data) {
+        super(data);
+        this.id = uuid_1.v4();
     }
 };
-SportingEventDataSource.dataSourceName = 'SportingEvent';
-SportingEventDataSource = __decorate([
-    __param(0, core_1.inject('datasources.config.SportingEvent', { optional: true })),
+__decorate([
+    repository_1.property({
+        type: 'string',
+        id: true
+    }),
+    __metadata("design:type", String)
+], UserGroup.prototype, "id", void 0);
+__decorate([
+    repository_1.property({
+        type: 'string',
+        required: true,
+    }),
+    __metadata("design:type", String)
+], UserGroup.prototype, "name", void 0);
+__decorate([
+    repository_1.property({
+        type: 'array',
+        itemType: 'string',
+    }),
+    __metadata("design:type", Array)
+], UserGroup.prototype, "memberIds", void 0);
+UserGroup = __decorate([
+    repository_1.model({ settings: {} }),
     __metadata("design:paramtypes", [Object])
-], SportingEventDataSource);
-exports.SportingEventDataSource = SportingEventDataSource;
-//# sourceMappingURL=sporting-event.datasource.js.map
+], UserGroup);
+exports.UserGroup = UserGroup;
+//# sourceMappingURL=user-group.model.js.map

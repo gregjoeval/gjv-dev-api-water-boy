@@ -16,7 +16,7 @@ const core_1 = require("@loopback/core");
 const repository_1 = require("@loopback/repository");
 const config = require("./person.datasource.json");
 let PersonDataSource = class PersonDataSource extends repository_1.juggler.DataSource {
-    constructor(dsConfig = Object.assign({}, config, { host: process.env.MONGODB__HOST, user: process.env.MONGODB__USER, password: process.env.MONGODB__PASSWORD, url: `mongodb+srv://${process.env.MONGODB__USER}:${process.env.MONGODB__PASSWORD}@${process.env.MONGODB__HOST}/${config.database}?retryWrites=true&w=majority` })) {
+    constructor(dsConfig = Object.assign({}, config, { url: `mongodb+srv://${process.env.MONGODB__USER}:${process.env.MONGODB__PASSWORD}@${process.env.MONGODB__HOST}/${config.database}?retryWrites=true&w=majority` })) {
         super(dsConfig);
     }
 };

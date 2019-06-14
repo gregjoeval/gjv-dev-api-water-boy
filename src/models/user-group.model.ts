@@ -1,11 +1,11 @@
 import {Entity, model, property} from '@loopback/repository';
+import {v4 as uuid} from 'uuid';
 
 @model({settings: {}})
 export class UserGroup extends Entity {
   @property({
     type: 'string',
-    id: true,
-    required: true,
+    id: true
   })
   id: string;
 
@@ -24,6 +24,7 @@ export class UserGroup extends Entity {
 
   constructor(data?: Partial<UserGroup>) {
     super(data);
+    this.id = uuid()
   }
 }
 

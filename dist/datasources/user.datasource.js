@@ -14,16 +14,16 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@loopback/core");
 const repository_1 = require("@loopback/repository");
-const config = require("./sporting-event.datasource.json");
-let SportingEventDataSource = class SportingEventDataSource extends repository_1.juggler.DataSource {
+const config = require("./user.datasource.json");
+let UserDataSource = class UserDataSource extends repository_1.juggler.DataSource {
     constructor(dsConfig = Object.assign({}, config, { url: `mongodb+srv://${process.env.MONGODB__USER}:${process.env.MONGODB__PASSWORD}@${process.env.MONGODB__HOST}/${config.database}?retryWrites=true&w=majority` })) {
         super(dsConfig);
     }
 };
-SportingEventDataSource.dataSourceName = 'SportingEvent';
-SportingEventDataSource = __decorate([
-    __param(0, core_1.inject('datasources.config.SportingEvent', { optional: true })),
+UserDataSource.dataSourceName = 'User';
+UserDataSource = __decorate([
+    __param(0, core_1.inject('datasources.config.User', { optional: true })),
     __metadata("design:paramtypes", [Object])
-], SportingEventDataSource);
-exports.SportingEventDataSource = SportingEventDataSource;
-//# sourceMappingURL=sporting-event.datasource.js.map
+], UserDataSource);
+exports.UserDataSource = UserDataSource;
+//# sourceMappingURL=user.datasource.js.map

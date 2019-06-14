@@ -8,4 +8,6 @@ __export(require("./fullstride-game.controller"));
 __export(require("./person.controller"));
 __export(require("./team.controller"));
 __export(require("./sporting-event.controller"));
+__export(require("./user.controller"));
+__export(require("./user-group.controller"));
 //# sourceMappingURL=index.js.map

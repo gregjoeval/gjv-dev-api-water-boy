@@ -10,16 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const repository_1 = require("@loopback/repository");
+const uuid_1 = require("uuid");
 let SportingEvent = class SportingEvent extends repository_1.Entity {
     constructor(data) {
         super(data);
+        this.id = uuid_1.v4();
     }
 };
 __decorate([
     repository_1.property({
         type: 'string',
-        id: true,
-        required: true,
+        id: true
     }),
     __metadata("design:type", String)
 ], SportingEvent.prototype, "id", void 0);

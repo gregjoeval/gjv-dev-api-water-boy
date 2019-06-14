@@ -12,18 +12,18 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = require("@loopback/core");
 const repository_1 = require("@loopback/repository");
-const config = require("./sporting-event.datasource.json");
-let SportingEventDataSource = class SportingEventDataSource extends repository_1.juggler.DataSource {
-    constructor(dsConfig = Object.assign({}, config, { url: `mongodb+srv://${process.env.MONGODB__USER}:${process.env.MONGODB__PASSWORD}@${process.env.MONGODB__HOST}/${config.database}?retryWrites=true&w=majority` })) {
-        super(dsConfig);
+const models_1 = require("../models");
+const datasources_1 = require("../datasources");
+const core_1 = require("@loopback/core");
+let UserGroupRepository = class UserGroupRepository extends repository_1.DefaultCrudRepository {
+    constructor(dataSource) {
+        super(models_1.UserGroup, dataSource);
     }
 };
-SportingEventDataSource.dataSourceName = 'SportingEvent';
-SportingEventDataSource = __decorate([
-    __param(0, core_1.inject('datasources.config.SportingEvent', { optional: true })),
-    __metadata("design:paramtypes", [Object])
-], SportingEventDataSource);
-exports.SportingEventDataSource = SportingEventDataSource;
-//# sourceMappingURL=sporting-event.datasource.js.map
+UserGroupRepository = __decorate([
+    __param(0, core_1.inject('datasources.UserGroup')),
+    __metadata("design:paramtypes", [datasources_1.UserGroupDataSource])
+], UserGroupRepository);
+exports.UserGroupRepository = UserGroupRepository;
+//# sourceMappingURL=user-group.repository.js.map

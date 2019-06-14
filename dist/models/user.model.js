@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const repository_1 = require("@loopback/repository");
 const uuid_1 = require("uuid");
-let Person = class Person extends repository_1.Entity {
+let User = class User extends repository_1.Entity {
     constructor(data) {
         super(data);
         this.id = uuid_1.v4();
@@ -23,54 +23,43 @@ __decorate([
         id: true
     }),
     __metadata("design:type", String)
-], Person.prototype, "id", void 0);
+], User.prototype, "id", void 0);
 __decorate([
     repository_1.property({
         type: 'string',
         required: true,
     }),
     __metadata("design:type", String)
-], Person.prototype, "firstName", void 0);
+], User.prototype, "personId", void 0);
 __decorate([
     repository_1.property({
         type: 'string',
         required: true,
     }),
     __metadata("design:type", String)
-], Person.prototype, "lastName", void 0);
+], User.prototype, "userGroupId", void 0);
+__decorate([
+    repository_1.property({
+        type: 'string',
+        required: true
+    }),
+    __metadata("design:type", String)
+], User.prototype, "email", void 0);
 __decorate([
     repository_1.property({
         type: 'string',
     }),
     __metadata("design:type", String)
-], Person.prototype, "middleName", void 0);
+], User.prototype, "phone", void 0);
 __decorate([
     repository_1.property({
         type: 'string',
     }),
     __metadata("design:type", String)
-], Person.prototype, "dateOfBirth", void 0);
-__decorate([
-    repository_1.property({
-        type: 'string',
-    }),
-    __metadata("design:type", String)
-], Person.prototype, "gender", void 0);
-__decorate([
-    repository_1.property({
-        type: 'string',
-    }),
-    __metadata("design:type", String)
-], Person.prototype, "phone", void 0);
-__decorate([
-    repository_1.property({
-        type: 'string',
-    }),
-    __metadata("design:type", String)
-], Person.prototype, "email", void 0);
-Person = __decorate([
+], User.prototype, "alias", void 0);
+User = __decorate([
     repository_1.model({ settings: {} }),
     __metadata("design:paramtypes", [Object])
-], Person);
-exports.Person = Person;
-//# sourceMappingURL=person.model.js.map
+], User);
+exports.User = User;
+//# sourceMappingURL=user.model.js.map

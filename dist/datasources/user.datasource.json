@@ -1,5 +1,5 @@
 {
-    "name": "Person",
+    "name": "User",
     "connector": "mongodb",
     "port": 27017,
     "database": "gjv-dev-example-db",

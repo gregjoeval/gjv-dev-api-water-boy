@@ -7,4 +7,6 @@ __export(require("./fullstride-game.model"));
 __export(require("./sporting-event.model"));
 __export(require("./team.model"));
 __export(require("./person.model"));
+__export(require("./user.model"));
+__export(require("./user-group.model"));
 //# sourceMappingURL=index.js.map

@@ -7,4 +7,6 @@ __export(require("./fullstride-game.datasource"));
 __export(require("./sporting-event.datasource"));
 __export(require("./team.datasource"));
 __export(require("./person.datasource"));
+__export(require("./user.datasource"));
+__export(require("./user-group.datasource"));
 //# sourceMappingURL=index.js.map
