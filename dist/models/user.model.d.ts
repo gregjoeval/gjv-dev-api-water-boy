@@ -6,6 +6,7 @@ export declare class User extends Entity {
     email: string;
     phone?: string;
     alias?: string;
+    password: string;
     constructor(data?: Partial<User>);
 }
 export interface UserRelations {

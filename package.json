@@ -28,7 +28,7 @@
     "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
     "docker:build": "docker build -t gjv-dev-example .",
     "docker:run": "docker run -p 3000:3000 -d gjv-dev-example",
-    "migrate": "node ./dist/migrate",
+    "migrate": "node -r dotenv/config ./dist/migrate",
     "prestart": "npm run build",
     "start": "node -r dotenv/config .",
     "prepublishOnly": "npm run test"
@@ -64,6 +64,7 @@
   },
   "devDependencies": {
     "@types/node": "^10.11.2",
+    "npm-run-all": "^4.1.5",
     "tslint": "^5.15.0",
     "typescript": "^3.4.3"
   }
