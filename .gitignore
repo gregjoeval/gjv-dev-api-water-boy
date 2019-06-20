@@ -1,3 +1,6 @@
+# dist files
+dist/
+
 # IDE files
 .idea
 
