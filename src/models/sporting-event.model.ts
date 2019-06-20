@@ -60,6 +60,6 @@ export class SportingEvent extends Entity {
 
   constructor(data?: Partial<SportingEvent>) {
     super(data);
-    this.id = uuid();
+    this.id = (data || {}).id || uuid()
   }
 }

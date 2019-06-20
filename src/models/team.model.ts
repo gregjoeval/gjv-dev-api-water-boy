@@ -35,7 +35,7 @@ export class Team extends Entity {
 
   constructor(data?: Partial<Team>) {
     super(data);
-    this.id = uuid();
+    this.id = (data || {}).id || uuid()
   }
 }
 

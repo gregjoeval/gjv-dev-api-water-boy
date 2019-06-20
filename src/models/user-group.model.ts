@@ -15,16 +15,10 @@ export class UserGroup extends Entity {
   })
   name: string;
 
-  @property({
-    type: 'array',
-    itemType: 'string',
-  })
-  memberIds?: string[];
-
 
   constructor(data?: Partial<UserGroup>) {
     super(data);
-    this.id = uuid()
+    this.id = (data || {}).id || uuid()
   }
 }
 

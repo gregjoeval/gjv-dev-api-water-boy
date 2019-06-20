@@ -49,7 +49,7 @@ export class Person extends Entity {
 
   constructor(data?: Partial<Person>) {
     super(data);
-    this.id = uuid();
+    this.id = (data || {}).id || uuid()
   }
 }
 
