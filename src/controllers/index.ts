@@ -5,3 +5,4 @@ export * from './team.controller';
 export * from './sporting-event.controller';
 export * from './user.controller';
 export * from './user-group.controller';
+export * from './who-am-i.controller';

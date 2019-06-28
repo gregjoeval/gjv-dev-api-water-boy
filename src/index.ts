@@ -3,7 +3,7 @@ import {ApplicationConfig} from '@loopback/core';
 
 export {GjvDevExampleApplication};
 
-export async function main(options: ApplicationConfig = {}) {
+export async function main(options?: ApplicationConfig) {
   const app = new GjvDevExampleApplication(options);
   await app.boot();
   await app.start();

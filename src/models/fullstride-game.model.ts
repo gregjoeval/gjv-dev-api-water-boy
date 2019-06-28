@@ -16,6 +16,7 @@ export class FullstrideGame extends Entity {
 
   @property({
     type: 'string',
+    required: true,
   })
   season: string;
 
