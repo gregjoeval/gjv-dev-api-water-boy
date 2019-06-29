@@ -10,13 +10,18 @@ export class FullstrideGame extends Entity {
   id: string;
 
   @property({
+    type: 'string',
+    required: true,
+  })
+  number: string;
+
+  @property({
     type: 'date',
   })
   lastUpdated?: string;
 
   @property({
     type: 'string',
-    id: true,
     required: true,
   })
   season: string;
