@@ -1,3 +1,6 @@
+# tsbuildinfo
+*.tsbuildinfo
+
 # dist files
 dist/
 

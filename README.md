@@ -5,4 +5,4 @@
 
 To generate client side code run this command:
 
-openapi-generator generate -i https://gjv-dev-example-api.herokuapp.com/openapi.json -g javascript -o /temp/client-fullstride-game-api --additional-properties useES6=true,usePromises=true
+openapi-generator generate -i https://gjv-dev-api-water-boy.herokuapp.com/openapi.json -g javascript -o /temp/client-fullstride-game-api --additional-properties useES6=true,usePromises=true
