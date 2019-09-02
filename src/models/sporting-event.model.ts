@@ -13,13 +13,7 @@ export class SportingEvent extends Entity {
     type: 'string',
     required: true,
   })
-  date: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  time: string;
+  dateTime: string;
 
   @property({
     type: 'string',
