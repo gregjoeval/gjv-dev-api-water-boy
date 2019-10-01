@@ -51,6 +51,11 @@ export class SportingEvent extends Entity {
   })
   division?: string;
 
+  @property({
+    type: 'string',
+  })
+  season?: string;
+
 
   constructor(data?: Partial<SportingEvent>) {
     super(data);
