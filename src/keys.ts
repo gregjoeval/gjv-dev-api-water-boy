@@ -8,6 +8,8 @@ import {PasswordHasher} from './services/hash.password.bcryptjs';
 import {TokenService, UserService} from '@loopback/authentication';
 import {User} from './models';
 import {Credentials} from './repositories';
+import {FullstrideGameService, IFullstrideGameService} from './services/fullstride-game.service';
+import {ITwilioService} from './services/twilio.service';
 
 export namespace TokenServiceConstants {
   export const TOKEN_SECRET_VALUE = process.env.JWT_SECRET || 'changeM3pl3ase'; // TODO: CHANGE ME
@@ -36,5 +38,11 @@ export namespace PasswordHasherBindings {
 export namespace UserServiceBindings {
   export const USER_SERVICE = BindingKey.create<UserService<User, Credentials>>(
     'services.user.service',
+  );
+}
+
+export namespace TwilioServiceBindings {
+  export const TWILIO_SERVICE = BindingKey.create<ITwilioService>(
+    'services.twilio.service',
   );
 }

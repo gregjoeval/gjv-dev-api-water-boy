@@ -17,7 +17,9 @@ export async function main(options?: ApplicationConfig) {
     security: [],
     servers: [],
     paths: [],
-    components: undefined,
+    components: {
+      schemas: {"BearerAuth": {}}
+    },
   };
   app.setMetadata({
     name: 'gjv-dev-api-water-boy',

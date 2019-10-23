@@ -1,5 +1,5 @@
 import {BootMixin} from '@loopback/boot';
-import {ApplicationConfig, BindingKey} from '@loopback/core';
+import {ApplicationConfig} from '@loopback/core';
 import {
   RestExplorerBindings,
   RestExplorerComponent,
@@ -11,22 +11,11 @@ import * as path from 'path';
 import {AuthenticationComponent, registerAuthenticationStrategy} from '@loopback/authentication';
 import {JWTAuthenticationStrategy} from './authentication-strategies/jwt-strategy';
 import {MyAuthenticatingSequence} from './auth-sequence';
-import {PasswordHasherBindings, TokenServiceBindings, TokenServiceConstants, UserServiceBindings} from './keys';
+import {PasswordHasherBindings, TokenServiceBindings, TokenServiceConstants, UserServiceBindings, TwilioServiceBindings} from './keys';
 import {JWTService} from './services/jwt-service';
 import {BcryptHasher} from './services/hash.password.bcryptjs';
 import {MyUserService} from './services/user-service';
-
-// import * as pkg from '../package.json';
-
-// /**
-//  * Information from package.json
-//  */
-// export interface PackageInfo {
-//   name: string;
-//   version: string;
-//   description: string;
-// }
-// export const PackageKey = BindingKey.create<PackageInfo>('application.package');
+import {TwilioService} from './services/twilio.service';
 
 export class GjvDevExampleApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
@@ -88,5 +77,7 @@ export class GjvDevExampleApplication extends BootMixin(
     this.bind(PasswordHasherBindings.PASSWORD_HASHER).toClass(BcryptHasher);
 
     this.bind(UserServiceBindings.USER_SERVICE).toClass(MyUserService);
+
+    this.bind(TwilioServiceBindings.TWILIO_SERVICE).toClass(TwilioService);
   }
 }
