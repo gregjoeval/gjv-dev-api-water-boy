@@ -53,7 +53,7 @@ export class ScheduledJobController {
     responses: {
       '200': {
         description: 'Scheduled Job ran successfully',
-        content: null,
+        content: {'application/json': {}},
       },
     },
   })
