@@ -4,3 +4,4 @@ export * from './team.repository';
 export * from './sporting-event.repository';
 export * from './user.repository';
 export * from './user-group.repository';
+export * from './location.repository';

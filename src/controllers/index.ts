@@ -6,3 +6,4 @@ export * from './sporting-event.controller';
 export * from './user.controller';
 export * from './user-group.controller';
 export * from './scheduled-job.controller'
+export * from './location.controller';

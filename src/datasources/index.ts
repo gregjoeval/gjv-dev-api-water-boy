@@ -4,3 +4,4 @@ export * from './team.datasource';
 export * from './person.datasource';
 export * from './user.datasource';
 export * from './user-group.datasource';
+export * from './location.datasource';

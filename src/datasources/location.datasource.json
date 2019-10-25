@@ -1,0 +1,8 @@
+{
+  "name": "Location",
+  "connector": "mongodb",
+  "port": 27017,
+  "database": "gjv-dev-example-db",
+  "useNewUrlParser": true
+}
+
