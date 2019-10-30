@@ -1,4 +1,5 @@
 import {Entity, model, property} from '@loopback/repository';
+import {v4 as uuid} from 'uuid';
 
 @model({settings: {}})
 export class Location extends Entity {
@@ -20,9 +21,14 @@ export class Location extends Entity {
   })
   address?: string;
 
+  @property({
+    type: 'string',
+  })
+  link?: string;
 
   constructor(data?: Partial<Location>) {
     super(data);
+    this.id = (data || {}).id || uuid()
   }
 }
 
