@@ -5,7 +5,8 @@ import {v4 as uuid} from 'uuid';
 export class Team extends Entity {
   @property({
     type: 'string',
-    id: true
+    id: true,
+    required: true,
   })
   id: string;
 
@@ -23,7 +24,6 @@ export class Team extends Entity {
   @property({
     type: 'array',
     itemType: 'string',
-    required: true,
   })
   memberIds: string[];
 
