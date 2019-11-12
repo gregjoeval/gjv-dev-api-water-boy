@@ -42,7 +42,7 @@ export class FullstrideGameService implements IFullstrideGameService {
   static async run (twilioService: ITwilioService, fullstrideGameRepository: FullstrideGameRepository) {
     function calculateDiff (repository: FullstrideGameRepository, games: FullstrideGame[]) {
       return games.map(async game => {
-        const result = await repository.findById(game.id);
+        const result = await repository.findById(game.id).catch(() => null);
 
         if (!result) {
           // if there isn't a game with that id, create one
